@@ -1,0 +1,22 @@
+{
+  "name": "liotyph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thibault-p/liotyph.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thibault-p/liotyph/issues"
+  },
+  "homepage": "https://github.com/thibault-p/liotyph",
+  "devDependencies": {
+    "bower": "^1.5.2"
+  }
+}
