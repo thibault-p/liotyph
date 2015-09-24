@@ -14,7 +14,6 @@
     "./project/static/bower_components",
     "tests"
   ],
-  "directory": "./project/static/bower_components",
   "dependencies": {
     "bootstrap": "~3.3.2",
     "jquery": "~2.1.3",

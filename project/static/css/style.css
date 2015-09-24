@@ -1,1 +1,13 @@
 /* custom styles */
+body{
+	background-color:gray;
+}
+
+
+.monthbox {
+	border: solid 10px white;
+	border-bottom-width: 40px;
+	height: 200px;
+	width:180px;
+	box-shadow: 10px 10px 5px #222222;
+}

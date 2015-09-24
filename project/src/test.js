@@ -1,53 +1,93 @@
-var DynamicSearch = React.createClass({
+
+var AlbumViewer = React.createClass({
 
   // sets initial state
   getInitialState: function(){
     return { searchString: '' };
   },
 
-  // sets state, triggers render method
-  handleChange: function(event){
-    // grab value form input box
-    this.setState({searchString:event.target.value});
-    console.log("scope updated!")
-  },
+
 
   render: function() {
 
-    var countries = this.props.items;
-    var searchString = this.state.searchString.trim().toLowerCase();
-
-    // filter countries list by value from input box
-    if(searchString.length > 0){
-      countries = countries.filter(function(country){
-        return country.name.toLowerCase().match( searchString );
-      });
-    }
-
+    var albums = this.props.albums;
     return (
-      <div>
-        <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Search!" />
-        <ul>
-          { countries.map(function(country){ return <li>{country.name} </li> }) }
-        </ul>
+      <div className="col-xs-ofsset-1 col-xs-10">
+          {
+						albums.map(function(album){
+							return (
+								<YearAlbum album={album} />
+							);
+						})
+					}
       </div>
     )
   }
-
 });
 
+var YearAlbum = React.createClass({
+
+	render: function(){
+		var self = this;
+		var album = self.props.album;
+
+		return (
+			<div className="col-xs-12">
+				<h2>{album.year}</h2>
+				<div className="row">
+				{
+					album.months.sort().map(function(month){
+						return (
+							<MonthAlbum year={album.year} month={month} />
+						);
+					})
+				}
+				</div>
+			</div>
+
+		);
+	}
+});
+
+var MonthAlbum = React.createClass({
+
+	render: function(){
+		var self = this;
+		var month = self.props.month;
+		var year = self.props.year;
+
+		return (
+			<div className="monthbox">
+				<a href="#">{monthsname[parseInt(month)]}</a>
+			</div>
+		);
+
+	}
+});
+
+
+
 // list of countries, defined with JavaScript object literals
-var countries = [
-  {"name": "Sweden"}, {"name": "China"}, {"name": "Peru"}, {"name": "Czech Republic"},
-  {"name": "Bolivia"}, {"name": "Latvia"}, {"name": "Samoa"}, {"name": "Armenia"},
-  {"name": "Greenland"}, {"name": "Cuba"}, {"name": "Western Sahara"}, {"name": "Ethiopia"},
-  {"name": "Malaysia"}, {"name": "Argentina"}, {"name": "Uganda"}, {"name": "Chile"},
-  {"name": "Aruba"}, {"name": "Japan"}, {"name": "Trinidad and Tobago"}, {"name": "Italy"},
-  {"name": "Cambodia"}, {"name": "Iceland"}, {"name": "Dominican Republic"}, {"name": "Turkey"},
-  {"name": "Spain"}, {"name": "Poland"}, {"name": "Haiti"}
+var albums = [
+	{"year": "2015", "months": ["1","4","3"]},
+	{"year": "2014", "months": ["4","3"]}
 ];
 
+var monthsname= [	"No date",
+									"January",
+									"February",
+									"March",
+									"April",
+									"May",
+									"June",
+									"July",
+									"August",
+									"September",
+									"October",
+									"November",
+									"December"];
+
 React.render(
-  <DynamicSearch items={ countries } />,
+  <AlbumViewer albums={ albums } />,
   document.getElementById('main')
 );
