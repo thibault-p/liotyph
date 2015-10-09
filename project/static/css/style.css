@@ -2,12 +2,46 @@
 body{
 	background-color:gray;
 }
+h1{
+		font-family: 'Amatic SC', cursive;
+		font-size: 3em;
+}
 
 
 .monthbox {
-	border: solid 10px white;
-	border-bottom-width: 40px;
+	padding: 10px;
+	margin: 10px;
+	background-color: white;
 	height: 200px;
 	width:180px;
-	box-shadow: 10px 10px 5px #222222;
+	box-shadow: 5px 5px 5px #666666;
+}
+.monthbox:hover{
+	cursor: pointer;
+}
+
+.monthbox p{
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+	top: 0px;
+	font-family: 'Amatic SC', cursive;
+	font-size: 20px;
+}
+
+.monthbox .picture{
+	width: 160px;
+	height: 160px;
+	min-width: 160px;
+	min-height: 160px;
+	background-color: black;
+	position: relative;
+}
+
+.monthbox .picture img{
+	display: none;
+}
+
+.monthbox .picture img.active{
+	display: block;
 }

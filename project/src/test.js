@@ -12,7 +12,7 @@ var AlbumViewer = React.createClass({
 
     var albums = this.props.albums;
     return (
-      <div className="col-xs-ofsset-1 col-xs-10">
+      <div className="col-xs-offset-1 col-xs-10">
           {
 						albums.map(function(album){
 							return (
@@ -50,21 +50,50 @@ var YearAlbum = React.createClass({
 });
 
 var MonthAlbum = React.createClass({
+  getInitialState: function(){
+    var self = this;
+    return self.state = { currentpicture: 0 };
+  },
+
+  handleChangePicture: function(e){
+    var self = this;
+    console.log(self);
+    console.log(e.clientX);
+    var offset = $(self);
+    console.log(offset);
+    var divPos = {
+        left: e.pageX - offset.left,
+        top: e.pageY - offset.top
+    };
+    console.log(divPos);
+  },
+
 
 	render: function(){
 		var self = this;
 		var month = self.props.month;
 		var year = self.props.year;
+    var activePict = self.state.currentpicture;
 
 		return (
-			<div className="monthbox">
-				<a href="#">{monthsname[parseInt(month)]}</a>
-			</div>
-		);
+			  <div className="monthbox center-block col-xs-3">
+          <div className="picture" onMouseMove={self.handleChangePicture}>
+            {
+                imgs.map(function(img,index){
+                  var isactive = (index === self.state.currentpicture)? 'active' : '' ;
+                  return <img src={img} className={isactive} />
+                })
+            }
 
+          </div>
+
+          <p>{monthsname[parseInt(month)]}</p>
+			  </div>
+		);
 	}
 });
 
+var imgs = ["static/img/img1.jpg", "static/img/img2.jpg", "static/img/img3.jpg"];
 
 
 // list of countries, defined with JavaScript object literals
