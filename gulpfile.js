@@ -6,19 +6,26 @@ var gulp = require('gulp'),
     size = require('gulp-size'),
     clean = require('gulp-clean');
 
+function onError(err){
+  console.log("Error: " + err.message);
+  this.emit('end');
+}
+
+
+
 // tasks
 gulp.task('default', ['clean'], function () {
   gulp.start('transform');
-	gulp.watch('./project/src/*', ['transform']);
+	gulp.watch('./liotyphserver/src/**/*', ['transform']);
 });
 
 gulp.task('transform', function () {
-  return gulp.src('./project/src/*.js')
-    .pipe(browserify({transform: ['reactify']}))
-    .pipe(gulp.dest('./project/static/js'))
+  return gulp.src('./liotyphserver/src/*.js')
+    .pipe(browserify({transform: ['reactify']}).on('error', onError))
+    .pipe(gulp.dest('./liotyphserver/static/js'))
     .pipe(size());
 });
 
 gulp.task('clean', function () {
-  return gulp.src(["./project/static/js"], {read: false}).pipe(clean());
+  return gulp.src(["./liotyphserver/static/js"], {read: false}).pipe(clean());
 });

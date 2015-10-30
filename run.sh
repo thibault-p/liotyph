@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python2.7 project/app.py
+python2.7 liotyphserver/app.py

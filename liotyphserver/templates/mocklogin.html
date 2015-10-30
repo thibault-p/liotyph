@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>liotyph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <nav class="navbar navbar-default  navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            LioTyPH
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Logout</a></li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="col-xs-10 col-xs-offset-1">
+          <ol class="breadcrumb">
+            <li><a href="#">Albums</a></li>
+            <li><a href="#">2014</a></li>
+            <li class="active">Janvier</li>
+          </ol>
+
+          <div class="col-xs-12 album-view breadcrumb">
+            <h2>Album name</h2>
+            <div class="col-xs-6 photo-entry">
+              dfsfsfsf
+            </div>
+          </div>
+          <div class="col-xs-12 album-view breadcrumb">
+            <h2>Album name</h2>
+            <div class="col-xs-6 col-sm-3 col-md-2 album-entry">
+              <a href="#" class="thumbnail">
+                This is an album
+              </a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 photo-entry">
+              <a href="#" class="thumbnail">
+                <img src="/static/img/bogus.jpg" class="responsive" />
+              </a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 photo-entry">
+              <a href="#" class="thumbnail">
+                <img src="/static/img/bogus.jpg" class="responsive" />
+              </a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 photo-entry">
+              <a href="#" class="thumbnail">
+                <img src="/static/img/bogus.jpg" class="responsive" />
+              </a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 photo-entry">
+              <a href="#" class="thumbnail">
+                <img src="/static/img/bogus.jpg" class="responsive" />
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- scripts -->
+    <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+  </body>
+</html>

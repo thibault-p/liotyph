@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>liotyph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div class="container-fluid" id="wrap">
+      <div class="loginscreen col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+        <h1>LioTyPH</h1>
+        <form>
+          <h2>Please sign in</h2>
+          <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="Username"/>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password"/>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-default" type="submit">Sign in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- scripts -->
+    <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+  </body>
+</html>

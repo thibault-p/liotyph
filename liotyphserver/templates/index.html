@@ -10,16 +10,12 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
   <body>
-    <div class="container-fluid">
-      <h1>liotyph</h1>
-      <br>
-      <div id="main"></div>
-    </div>
+    <div id="content"></div>
     <!-- scripts -->
-     <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
-     <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
-     <script src="{{ url_for('static', filename='bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-     <script src="{{ url_for('static', filename='js/test.js') }}"></script>
-
+    <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/react/react-dom.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
   </body>
 </html>

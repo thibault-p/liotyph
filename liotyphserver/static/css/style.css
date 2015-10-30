@@ -1,12 +1,45 @@
 /* custom styles */
 body{
-	background-color:gray;
-}
-h1{
-		font-family: 'Amatic SC', cursive;
-		font-size: 3em;
+	background-color:#CCCBC3;
 }
 
+h1{
+		font-family: 'Amatic SC', cursive;
+}
+
+/* navbar */
+.navbar{
+	border-radius:0px;
+}
+.navbar-brand{
+	font-family: 'Amatic SC', cursive;
+	font-size: 2em;
+}
+
+.breadcrumb{
+	box-shadow: 5px 5px 5px #aaaaaa;
+}
+.album-view h2{
+	font-family: 'Amatic SC', cursive;
+	font-size: 3em;
+	border-bottom: solid 1px #666666;
+}
+
+.loginscreen {
+	background-color: #272822;
+	box-shadow:  5px 5px 5px #666666;
+	margin-top: 3em;
+}
+.loginscreen h1 {
+	color: white;
+	text-align: center;
+	font-size: 4em;
+}
+.loginscreen h2 {
+	font-size: 1em;
+	color: white;
+	font-weight: normal;
+}
 
 .monthbox {
 	padding: 10px;
@@ -44,4 +77,8 @@ h1{
 
 .monthbox .picture img.active{
 	display: block;
+}
+
+.wrap{
+	padding-bottom:150px;
 }
